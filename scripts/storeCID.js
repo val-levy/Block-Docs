@@ -4,7 +4,7 @@ import { uploadToIPFS } from "../ipfs.js";
 const { ethers } = hardhat;
 
 async function storeCID(filePath) {
-    const contractAddress = "0xe1FE382c3fb8aA386396FAc5777be7CE8D5F0C81"; // Replace this
+    const contractAddress = "DEPLOYED_CONTRACT_HERE"; // Replace this
 
     // Get signer (wallet)
     const [signer] = await ethers.getSigners();
