@@ -3,7 +3,7 @@ import hardhat from "hardhat";
 const { ethers } = hardhat;
 
 async function getUserCIDs() {
-    const contractAddress = "0xe1FE382c3fb8aA386396FAc5777be7CE8D5F0C81"; // Replace with actual deployed contract address
+    const contractAddress = "DEPLOYED_CONTRACT_HERE"; // Replace with actual deployed contract address
     // Get wallet signer
     const [signer] = await ethers.getSigners();
     console.log("Fetching stored CIDs for user:", signer.address);
