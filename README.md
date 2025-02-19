@@ -1,5 +1,5 @@
 # Chain Safe
-Project for UPenn Hackathon by Val Levy, Finley Fujimura, and Armaan Hajaar
+A program designed to hash and upload secure documents to the blockchain
 ## Dependencies
 1. NodeJS
 2. Ganache (CLI or GUI)
