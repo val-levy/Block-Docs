@@ -3,8 +3,8 @@ import hardhat from "hardhat";
 const { ethers } = hardhat;
 
 async function approveUser() {
-    const contractAddress = "0xe1FE382c3fb8aA386396FAc5777be7CE8D5F0C81"; // Replace this
-    const userAddress = "0x6E1C4d5BEAFe57D82252e862985AE621f216925F"; // Replace with the user you want to approve
+    const contractAddress = "0x0"; // Replace this
+    const userAddress = "0x0"; // Replace with the user you want to approve
 
     const [admin] = await ethers.getSigners(); // Get the admin wallet
 
