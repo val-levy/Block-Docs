@@ -1,4 +1,4 @@
-# Chain Safe
+# BlockDocs
 A program designed to hash and upload secure documents to the blockchain
 ## Dependencies
 1. NodeJS
