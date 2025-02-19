@@ -1,4 +1,4 @@
-# Only-Chains
+# Chain Safe
 Project for UPenn Hackathon by Val Levy, Finley Fujimura, and Armaan Hajaar
 ## Dependencies
 1. NodeJS
@@ -11,10 +11,10 @@ Project for UPenn Hackathon by Val Levy, Finley Fujimura, and Armaan Hajaar
 
 ```sh
 # 1. Clone the repository
-git clone https://github.com/val-levy/Only-Chains.git
+git clone https://github.com/val-levy/Chain-Safe.git
 
 # 2. Navigate into the project directory
-cd Only-Chains/
+cd Chain-Safe/
 
 # 3. Install dependencies
 npm install
