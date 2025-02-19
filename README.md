@@ -11,10 +11,10 @@ A program designed to hash and upload secure documents to the blockchain
 
 ```sh
 # 1. Clone the repository
-git clone https://github.com/val-levy/Chain-Safe.git
+git clone https://github.com/val-levy/Block-Docs.git
 
 # 2. Navigate into the project directory
-cd Chain-Safe/
+cd Block-Docs/
 
 # 3. Install dependencies
 npm install
