@@ -30,6 +30,7 @@ echo "PINATA_JWT=your_pinata_jwt_here" >> .env
 ganache-cli -d
 # Or open Ganache GUI and start a new workspace.
 # Find your mnemonic phrase and paste it into hardhat.config.js
+
 # 7. Clean previous builds
 npx hardhat clean
 
@@ -39,12 +40,7 @@ npx hardhat compile
 # 9. Deploy smart contracts
 npx hardhat run scripts/deploy.js --network ganache
 
-# 10. Replace the contract address in:
-# - storeCID.js
-# - getUserCID.js
-# - approveUser.js
-
-# 11. Approve a user (replace 'userAddress' with a Ganache wallet address)
+# 11. Approve a user
 npx hardhat run scripts/approveUser.js --network ganache
 
 # 12. Upload a file to IPFS (replace 'filePath' with your actual file path)
