@@ -1,15 +1,18 @@
-const hre = require("hardhat");
+import hardhat from "hardhat";
+import { saveContractAddress } from "../config.js";
 
 async function main() {
-    const ContractFactory = await hre.ethers.getContractFactory("CIDStorage"); // Replace with your actual contract name
-    const contract = await ContractFactory.deploy(); // Deploy the contract
+    const Contract = await hardhat.ethers.deployContract("CIDStorage");
+    await Contract.waitForDeployment();
 
-    await contract.waitForDeployment(); // Wait for deployment
+    const contractAddress = await Contract.getAddress();
+    console.log("✅ Contract deployed at:", contractAddress);
 
-    console.log("Contract deployed at:", await contract.getAddress());
+    // Save the contract address to a file
+    saveContractAddress(contractAddress);
 }
 
 main().catch((error) => {
     console.error(error);
-    process.exitCode = 1;
+    process.exit(1);
 });

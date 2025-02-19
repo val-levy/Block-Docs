@@ -1,27 +1,22 @@
 import hardhat from "hardhat";
+import { getContractAddress } from "../config.js";
 import { uploadToIPFS } from "../ipfs.js";
 
-const { ethers } = hardhat;
+async function storeCID() {
+    const contractAddress = getContractAddress(); // Load saved contract address
+    const [signer] = await hardhat.ethers.getSigners(); // Get wallet signer
 
-async function storeCID(filePath) {
-    const contractAddress = "DEPLOYED_CONTRACT_HERE"; // Replace this
+    const Contract = await hardhat.ethers.getContractAt("CIDStorage", contractAddress, signer);
 
-    // Get signer (wallet)
-    const [signer] = await ethers.getSigners();
+    // Upload a file to IPFS
+    const cid = await uploadToIPFS("C:/Users/finnf/obg upenn hackathon.pdf");
 
-    // Retrieve contract and ensure it's connected to the signer
-    const Contract = await ethers.getContractAt("CIDStorage", contractAddress, signer);
-
-    // Upload file to IPFS and get CID
-    const cid = await uploadToIPFS(filePath);
-    console.log("Uploaded CID:", cid);
-
-    // Store CID in blockchain
+    // Store CID on the blockchain
     const tx = await Contract.storeCID(cid);
     await tx.wait();
 
-    console.log("CID stored on blockchain:", cid);
+    console.log("✅ CID stored on blockchain:", cid);
 }
 
 // Run the function
-storeCID("C:/Users/finnf/obg upenn hackathon.pdf").catch(console.error);
+storeCID().catch(console.error);

@@ -1,27 +1,47 @@
 import hardhat from "hardhat";
+import { getContractAddress } from "../config.js";
+import readline from "readline";
 
-const { ethers } = hardhat;
+// Function to prompt user input
+function askQuestion(query) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    return new Promise(resolve => rl.question(query, answer => {
+        rl.close();
+        resolve(answer);
+    }));
+}
 
 async function approveUser() {
-    const contractAddress = "0x0"; // Replace this
-    const userAddress = "0x0"; // Replace with the user you want to approve
+    const contractAddress = getContractAddress(); // Load the saved contract address
+    const [admin] = await hardhat.ethers.getSigners();
 
-    const [admin] = await ethers.getSigners(); // Get the admin wallet
+    console.log("\nAdmin Address:", admin.address);
+    console.log("Contract Address:", contractAddress);
 
-    console.log("Admin Address:", admin.address);
-    console.log("User to Approve:", userAddress);
+    // Prompt user for the Ethereum address they want to approve
+    const userAddress = await askQuestion("Enter the Ethereum address to approve: ");
 
-    // Manually fetch the contract ABI
+    if (!/^0x[a-fA-F0-9]{40}$/.test(userAddress)) {
+        console.error("\n❌ Invalid Ethereum address format. Please enter a valid address.");
+        process.exit(1);
+    }
+
+    console.log("\nApproving user:", userAddress);
+
     const contractABI = (await hardhat.artifacts.readArtifact("CIDStorage")).abi;
+    const Contract = new hardhat.ethers.Contract(contractAddress, contractABI, admin);
 
-    // Connect to the contract using ethers.Contract instead of getContractAt
-    const Contract = new ethers.Contract(contractAddress, contractABI, admin);
-
-    // Call the approveUser function
-    const tx = await Contract.approveUser(userAddress);
-    await tx.wait();
-
-    console.log(`✅ User ${userAddress} is now approved to store files!`);
+    try {
+        const tx = await Contract.approveUser(userAddress);
+        await tx.wait();
+        console.log(`✅ User ${userAddress} is now approved to store files!`);
+    } catch (error) {
+        console.error("❌ Error approving user:", error);
+    }
 }
 
 // Run the function
