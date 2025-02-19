@@ -29,7 +29,7 @@ echo "PINATA_JWT=your_pinata_jwt_here" >> .env
 # Using Ganache CLI:
 ganache-cli -d
 # Or open Ganache GUI and start a new workspace.
-
+# Find your mnemonic phrase and paste it into hardhat.config.js
 # 7. Clean previous builds
 npx hardhat clean
 
