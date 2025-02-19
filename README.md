@@ -1,21 +1,57 @@
 # Only-Chains
 Project for UPenn Hackathon by Val Levy, Finley Fujimura, and Armaan Hajaar
-Dependencies
-  1). NodeJS
-  2). Ganache
-  3). Pinata API Key
-  4). 
+## Dependencies
+1. NodeJS
+2. Ganache (CLI or GUI)
+3. Pinata API Key
 
+---
 
-1). git clone https://github.com/val-levy/Only-Chains.git
-2). cd Only-Chains/
-3). npm install
-4). touch .env  # Create .env file
-5). nano .env   # Add PINATA_JWT=your_pinata_jwt_here
-6). ganache-cli -d  # Start local blockchain, or open ganache GUI
-7). npx hardhat clean
-8). npx hardhat compile
-9). npx hardhat run scripts/deploy.js --network ganache # Replace contactaddress variable with deployed address in storeCID.js, getUserCID.js, and approveUser.js
-npx hardhat run scripts/approveUser.js --network ganache # Replace userAddress with any ganache wallet address
-npx hardhat run scripts/storeCID.js --network ganache # Replace file path at bottom with your desired files path
-npx hardhat run scripts/getUserCIDs.js --network ganache # Put link into browser
+## Setup Instructions
+
+```sh
+# 1. Clone the repository
+git clone https://github.com/val-levy/Only-Chains.git
+
+# 2. Navigate into the project directory
+cd Only-Chains/
+
+# 3. Install dependencies
+npm install
+
+# 4. Create a .env file
+touch .env
+
+# 5. Open .env and add your Pinata API Key
+echo "PINATA_JWT=your_pinata_jwt_here" >> .env
+
+# 6. Start a local blockchain:
+# Using Ganache CLI:
+ganache-cli -d
+# Or open Ganache GUI and start a new workspace.
+
+# 7. Clean previous builds
+npx hardhat clean
+
+# 8. Compile smart contracts
+npx hardhat compile
+
+# 9. Deploy smart contracts
+npx hardhat run scripts/deploy.js --network ganache
+
+# 10. Replace the contract address in:
+# - storeCID.js
+# - getUserCID.js
+# - approveUser.js
+
+# 11. Approve a user (replace 'userAddress' with a Ganache wallet address)
+npx hardhat run scripts/approveUser.js --network ganache
+
+# 12. Upload a file to IPFS (replace 'filePath' with your actual file path)
+npx hardhat run scripts/storeCID.js --network ganache
+
+# 13. Retrieve stored CIDs
+npx hardhat run scripts/getUserCIDs.js --network ganache
+
+# 14. Copy the output link and open it in your browser.
+
