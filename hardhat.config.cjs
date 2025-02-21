@@ -1,8 +1,10 @@
 require("@nomicfoundation/hardhat-toolbox");
-require('dotenv').config();
-const MNEMONIC = process.env.MNEMONIC;
+require("dotenv").config();
 
-module.exports =  {
+const MNEMONIC = process.env.MNEMONIC;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+
+module.exports = {
   solidity: "0.8.28",
   networks: {
     ganache: {
@@ -12,6 +14,20 @@ module.exports =  {
       },
       gas: 6000000,
       gasPrice: 20000000000 // 20 Gwei
-    }
-  }
+    },
+    baseSepolia: {
+      url: "https://sepolia.base.org",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 84532,
+      gas: "auto",
+    },
+  },
+  sourcify: {
+    enabled: true, // ✅ Use Sourcify instead of Etherscan
+  },
+  etherscan: {
+    apiKey: {
+      baseSepolia: "DO_NOT_USE", // ✅ Fake key to suppress warning
+    },
+  },
 };

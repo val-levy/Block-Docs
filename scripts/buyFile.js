@@ -13,7 +13,7 @@ function askQuestion(query) {
 
 async function buyFile() {
     const contractAddress = getContractAddress();
-    const [_, buyer] = await hardhat.ethers.getSigners(); // Use second wallet as buyer
+    const [buyer] = await hardhat.ethers.getSigners();
     const Contract = await hardhat.ethers.getContractAt("CIDStorage", contractAddress, buyer);
 
     console.log(`🔹 Connected to contract at: ${contractAddress}`);
