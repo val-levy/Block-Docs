@@ -29,11 +29,8 @@ contract CIDStorage {
     event AccessGranted(address indexed owner, address indexed user, uint256 fileIndex);
     event AccessRevoked(address indexed owner, address indexed user, uint256 fileIndex);
 
-    // ✅ Upload File (Files are NOT for sale by default)
     function storeFile(string memory cid, string memory fileName, string memory fileType) public {
-        userFiles[msg.sender].push(); // Push empty struct
-        File storage newFile = userFiles[msg.sender][userFiles[msg.sender].length - 1];
-
+        File storage newFile = userFiles[msg.sender].push();
         newFile.cid = cid;
         newFile.fileName = fileName;
         newFile.fileType = fileType;
@@ -44,76 +41,62 @@ contract CIDStorage {
         emit FileUploaded(msg.sender, cid, fileName);
     }
 
-    // ✅ Set Price for File (Only then will it appear for sale)
     function setPrice(uint256 fileIndex, uint256 price) public {
         require(fileIndex < userFiles[msg.sender].length, "Invalid file index");
+        require(userFiles[msg.sender].length > 0, "No files found for this user");
         userFiles[msg.sender][fileIndex].price = price;
         emit PriceUpdated(msg.sender, userFiles[msg.sender][fileIndex].cid, price);
     }
 
-    // ✅ Grant Access to a File
     function grantAccess(address user, uint256 fileIndex) public {
         require(fileIndex < userFiles[msg.sender].length, "Invalid file index");
-        require(user != msg.sender, "Cannot grant access to yourself");
-
-        File storage file = userFiles[msg.sender][fileIndex];
-        require(!file.sharedWith[user], "User already has access");
-
-        file.sharedWith[user] = true;
+        userFiles[msg.sender][fileIndex].sharedWith[user] = true;
         emit AccessGranted(msg.sender, user, fileIndex);
     }
 
-    // ✅ Revoke Access from a File
     function revokeAccess(address user, uint256 fileIndex) public {
         require(fileIndex < userFiles[msg.sender].length, "Invalid file index");
         require(userFiles[msg.sender][fileIndex].sharedWith[user], "User does not have access");
-
         userFiles[msg.sender][fileIndex].sharedWith[user] = false;
         emit AccessRevoked(msg.sender, user, fileIndex);
     }
 
-    // ✅ Buy a File (Gets CID but NOT permanent access)
     function buyFile(address seller, uint256 fileIndex) public payable {
         require(fileIndex < userFiles[seller].length, "Invalid file index");
         File storage file = userFiles[seller][fileIndex];
         require(msg.value >= file.price, "Insufficient payment");
         require(file.price > 0, "File is not for sale");
 
-        payable(seller).transfer(msg.value); // Send payment to seller
+        file.sharedWith[msg.sender] = false; // Buyer gets file but not automatic access
+        payable(seller).transfer(msg.value); // Send payment to the seller
 
         emit FilePurchased(msg.sender, seller, file.cid, file.price);
     }
 
-    // ✅ Get Only Files That Are for Sale
     function getUserFiles(address user) public view returns (FileView[] memory) {
         uint256 fileCount = userFiles[user].length;
-        uint256 sellableCount = 0;
 
-        // Count how many files have a price > 0
-        for (uint256 i = 0; i < fileCount; i++) {
-            if (userFiles[user][i].price > 0) {
-                sellableCount++;
-            }
+        if (fileCount == 0) {
+            return new FileView[](0);
         }
 
-        // Create a new array for only sellable files
-        FileView[] memory fileList = new FileView[](sellableCount);
-        uint256 index = 0;
+        FileView[] memory fileList = new FileView[](fileCount);
 
         for (uint256 i = 0; i < fileCount; i++) {
-            if (userFiles[user][i].price > 0) {
-                fileList[index] = FileView(
-                    userFiles[user][i].cid,
-                    userFiles[user][i].fileName,
-                    userFiles[user][i].fileType,
-                    userFiles[user][i].timestamp,
-                    userFiles[user][i].owner,
-                    userFiles[user][i].price
-                );
-                index++;
-            }
+            fileList[i] = FileView(
+                userFiles[user][i].cid,
+                userFiles[user][i].fileName,
+                userFiles[user][i].fileType,
+                userFiles[user][i].timestamp,
+                userFiles[user][i].owner,
+                userFiles[user][i].price
+            );
         }
 
         return fileList;
+    }
+
+    function getUserFileCount(address user) public view returns (uint256) {
+        return userFiles[user].length;
     }
 }
