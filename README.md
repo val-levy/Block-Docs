@@ -1,5 +1,7 @@
-# BlockDocs
-A program designed to hash and upload secure documents to the blockchain
+# BlockDocs -- Blockchain File Exchange
+
+A program designed to hash and upload secure documents to the blockchain that can be exchanged for cryptocurrency
+
 ## Dependencies
 1. NodeJS
 2. Ganache (CLI or GUI)
@@ -7,52 +9,28 @@ A program designed to hash and upload secure documents to the blockchain
 4. JavaScript
 5. Python3
 
----
 
-## Setup Instructions
+## Instructions
+
+1. Navigate to https://archive.trufflesuite.com/ganache/ and download the application
+   
+2. Start a new workspace. Copy and store Mnemonic
+
+3. Navigate to https://app.pinata.cloud/auth/signup and register/sign in
+
+4. Navigate to Toolbox/API Keys, create new a key as an admin. Copy all information and store
+
+
+
+## Setup and Run
 
 ```sh
 # 1. Clone the repository
 git clone https://github.com/val-levy/Block-Docs.git
 
 # 2. Navigate into the project directory
-cd Block-Docs/
+cd /Your-File-Path/Block-Docs/
 
-# 3. Install dependencies
-npm install
+# 3. Run the setup file
+python3 setup.py
 
-# 4. Create a .env file
-touch .env
-
-# 5. Open .env and add your Pinata API Key
-echo "PINATA_JWT=your_pinata_jwt_here" >> .env
-
-# 6. Clean previous builds
-npx hardhat clean
-
-# 7. Compile smart contracts
-npx hardhat compile
-
-# 8. Deploy smart contracts
-npx hardhat run scripts/deploy.js --network ganache
-
-# 11. Approve a user
-npx hardhat run scripts/approveUser.js --network ganache
-
-# 12. Upload a file to IPFS (replace 'filePath' with your actual file path)
-npx hardhat run scripts/storeCID.js --network ganache
-
-# 10. Retrieve stored CIDs
-npx hardhat run scripts/getUserCIDs.js --network ganache
-
-# 14. Copy the output link and open it in your browser.
-
-# 15. Grant file access to another wallet
-npx hardhat run scripts/grantAccess.js --network ganache
-- Enter the ETH address you wish to share a file with.
-
-#16. Revoking file access to another wallet.
-npx hardhat run scripts/revokeAccess.js --network ganache
--
-
-#17. 
