@@ -14,11 +14,8 @@ async function storeFile() {
 
     // File to upload
     const filePath = FILE_PATH; // Get file path from .env
-    console.log("📂 File Path:", filePath);
     const fileName = path.basename(filePath); // Extract file name
-    console.log("📝 File Name:", fileName);
     const fileType = path.extname(filePath).substring(1); // Extract file extension
-    console.log("📎 File Type:", fileType);
 
     console.log(`Uploading file: ${fileName} (${fileType})...`);
 
