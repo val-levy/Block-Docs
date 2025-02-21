@@ -22,6 +22,8 @@ contract CIDStorage {
     }
 
     mapping(address => File[]) private userFiles;
+    mapping(address => bool) private registeredUsers;
+    address[] private allUsers;
 
     event FileUploaded(address indexed owner, string cid, string fileName);
     event FilePurchased(address indexed buyer, address indexed seller, string cid, uint256 price);
@@ -30,6 +32,11 @@ contract CIDStorage {
     event AccessRevoked(address indexed owner, address indexed user, uint256 fileIndex);
 
     function storeFile(string memory cid, string memory fileName, string memory fileType) public {
+        if (!registeredUsers[msg.sender]) {
+            registeredUsers[msg.sender] = true;
+            allUsers.push(msg.sender);
+        }
+
         File storage newFile = userFiles[msg.sender].push();
         newFile.cid = cid;
         newFile.fileName = fileName;
@@ -76,10 +83,6 @@ contract CIDStorage {
     function getUserFiles(address user) public view returns (FileView[] memory) {
         uint256 fileCount = userFiles[user].length;
 
-        if (fileCount == 0) {
-            return new FileView[](0);
-        }
-
         FileView[] memory fileList = new FileView[](fileCount);
 
         for (uint256 i = 0; i < fileCount; i++) {
@@ -98,5 +101,49 @@ contract CIDStorage {
 
     function getUserFileCount(address user) public view returns (uint256) {
         return userFiles[user].length;
+    }
+
+    function getAllUsers() public view returns (address[] memory) {
+        return allUsers;
+    }
+
+    function isSharedWith(address fileOwner, uint256 fileIndex, address user) public view returns (bool) {
+        require(fileIndex < userFiles[fileOwner].length, "Invalid file index");
+        return userFiles[fileOwner][fileIndex].sharedWith[user];
+    }
+
+    function getSharedFiles(address user) public view returns (FileView[] memory) {
+        uint256 sharedCount = 0;
+
+        for (uint256 i = 0; i < allUsers.length; i++) {
+            address owner = allUsers[i];
+            for (uint256 j = 0; j < userFiles[owner].length; j++) {
+                if (userFiles[owner][j].sharedWith[user]) {
+                    sharedCount++;
+                }
+            }
+        }
+
+        FileView[] memory sharedList = new FileView[](sharedCount);
+        uint256 index = 0;
+
+        for (uint256 i = 0; i < allUsers.length; i++) {
+            address owner = allUsers[i];
+            for (uint256 j = 0; j < userFiles[owner].length; j++) {
+                if (userFiles[owner][j].sharedWith[user]) {
+                    sharedList[index] = FileView(
+                        userFiles[owner][j].cid,
+                        userFiles[owner][j].fileName,
+                        userFiles[owner][j].fileType,
+                        userFiles[owner][j].timestamp,
+                        userFiles[owner][j].owner,
+                        userFiles[owner][j].price
+                    );
+                    index++;
+                }
+            }
+        }
+
+        return sharedList;
     }
 }
