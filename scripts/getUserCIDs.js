@@ -23,6 +23,7 @@ async function getUserFiles() {
             console.log(`\n🔹 File ${index + 1}:`);
             console.log(`   📂 CID: ${file.cid}`);
             console.log(`   📝 Name: ${file.fileName}`);
+            console.log(`   📄 Description: ${file.fileDesc}`);
             console.log(`   📎 Type: ${file.fileType}`);
             console.log(`   ⏳ Uploaded At: ${new Date(Number(file.timestamp) * 1000).toLocaleString()}`);
             console.log(`   👤 Owner: ${file.owner}`);

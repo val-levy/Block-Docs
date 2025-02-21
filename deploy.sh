@@ -19,11 +19,15 @@ read -p "Enter your Pinata JWT: " pinata_jwt
 echo "Select the file you want to upload..."
 file_path=$(python3 -c "import tkinter as tk; from tkinter import filedialog; tk.Tk().withdraw(); print(filedialog.askopenfilename())")
 
+# Prompt user for file description
+read -p "Enter a description for the file: " description
+
 # Write the variables to .env
 echo "Saving credentials to .env..."
 echo "MNEMONIC=\"$mnemonic\"" > .env
 echo "PINATA_JWT=\"$pinata_jwt\"" >> .env
 echo "FILE_PATH=\"$file_path\"" >> .env
+echo "DESCRIPTION=\"$description\"" >> .env
 
 echo "Cleaning previous builds..."
 npx hardhat clean
