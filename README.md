@@ -55,6 +55,16 @@ npx hardhat run scripts/grantAccess.js --network ganache
 
 #16. Revoking file access to another wallet.
 npx hardhat run scripts/revokeAccess.js --network ganache
--
+- Choose which file to manage access.
+- Select which wallets to revoke access from.
 
-#17. 
+#17. Setting a price to purchase your file.
+npx hardhat run scripts/setPrice.js --network ganache
+- Select which of your files to set a price to
+- Enter the price in ETH
+
+#18. Buying a file.
+npx hardhat run scripts/buyFile.js --network ganache
+- Enter the ETH address you want to purchase files from
+- Select which files to purchase
+- Confirm total price
