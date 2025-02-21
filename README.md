@@ -36,10 +36,14 @@ npx hardhat compile
 # 8. Deploy smart contracts
 npx hardhat run scripts/deploy.js --network ganache
 
-# 9. Upload a file to IPFS (replace 'filePath' with your actual file path)
+# 11. Approve a user
+npx hardhat run scripts/approveUser.js --network ganache
+
+# 12. Upload a file to IPFS (replace 'filePath' with your actual file path)
 npx hardhat run scripts/storeCID.js --network ganache
 
 # 10. Retrieve stored CIDs
 npx hardhat run scripts/getUserCIDs.js --network ganache
 
-# 11. Copy the output link and open it in your browser.
+# 14. Copy the output link and open it in your browser.
+

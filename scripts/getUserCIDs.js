@@ -6,7 +6,7 @@ async function getUserFiles() {
     const [signer] = await hardhat.ethers.getSigners();
     const Contract = await hardhat.ethers.getContractAt("CIDStorage", contractAddress, signer);
 
-    console.log("Fetching stored files for:", signer.address);
+    console.log("🔍 Fetching stored files for:", signer.address);
 
     try {
         const files = await Contract.getUserFiles(signer.address);
@@ -18,8 +18,6 @@ async function getUserFiles() {
 
         console.log("\n📄 Stored Files:");
         files.forEach((file, index) => {
-            const pinataLink = `https://gateway.pinata.cloud/ipfs/${file.cid}`;
-            
             console.log(`\n🔹 File ${index + 1}:`);
             console.log(`   📂 CID: ${file.cid}`);
             console.log(`   📝 Name: ${file.fileName}`);
