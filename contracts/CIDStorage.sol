@@ -33,7 +33,7 @@ contract CIDStorage {
     event AccessGranted(address indexed owner, address indexed user, uint256 fileIndex);
     event AccessRevoked(address indexed owner, address indexed user, uint256 fileIndex);
 
-    function storeFile(string memory cid, string memory fileName, string memory fileType) public {
+    function storeFile(string memory cid, string memory fileName, string memory fileType, string memory fileDesc) public {
         File storage newFile = userFiles[msg.sender].push();
         newFile.cid = cid;
         newFile.fileName = fileName;
@@ -134,6 +134,7 @@ contract CIDStorage {
                         userFiles[owner][j].cid,
                         userFiles[owner][j].fileName,
                         userFiles[owner][j].fileType,
+                        userFiles[owner][j].fileDesc,
                         userFiles[owner][j].timestamp,
                         userFiles[owner][j].owner,
                         userFiles[owner][j].price
