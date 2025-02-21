@@ -1,0 +1,10 @@
+.edit-2,
+.edit-2 * {
+  box-sizing: border-box;
+}
+.edit-2 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}

@@ -1,0 +1,11 @@
+.arrow-back,
+.arrow-back * {
+  box-sizing: border-box;
+}
+.arrow-back {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}

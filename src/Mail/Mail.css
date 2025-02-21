@@ -1,0 +1,11 @@
+.mail,
+.mail * {
+  box-sizing: border-box;
+}
+.mail {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}

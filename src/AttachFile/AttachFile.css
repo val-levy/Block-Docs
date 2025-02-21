@@ -1,0 +1,11 @@
+.attach-file,
+.attach-file * {
+  box-sizing: border-box;
+}
+.attach-file {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}

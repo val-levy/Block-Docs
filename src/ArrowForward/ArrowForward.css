@@ -1,0 +1,11 @@
+.arrow-forward,
+.arrow-forward * {
+  box-sizing: border-box;
+}
+.arrow-forward {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}

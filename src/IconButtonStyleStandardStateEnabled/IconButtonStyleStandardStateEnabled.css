@@ -1,0 +1,41 @@
+.icon-button-style-standard-state-enabled,
+.icon-button-style-standard-state-enabled * {
+  box-sizing: border-box;
+}
+.icon-button-style-standard-state-enabled {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.icon-button-style-standard-state-enabled .container {
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.icon-button-style-standard-state-enabled .state-layer {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* nested override styles */
+
+.icon-button-style-standard-state-enabled .icon-instance {
+  flex-shrink: 0 !important;
+}

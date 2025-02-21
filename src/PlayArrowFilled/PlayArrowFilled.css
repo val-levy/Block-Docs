@@ -1,0 +1,11 @@
+.play-arrow-filled,
+.play-arrow-filled * {
+  box-sizing: border-box;
+}
+.play-arrow-filled {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}

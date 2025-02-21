@@ -1,0 +1,43 @@
+.building-blocks-carousel-item-text-supporting-text-false,
+.building-blocks-carousel-item-text-supporting-text-false * {
+  box-sizing: border-box;
+}
+.building-blocks-carousel-item-text-supporting-text-false {
+  flex-shrink: 0;
+  width: 204px;
+  height: 205px;
+  position: relative;
+}
+.building-blocks-carousel-item-text-supporting-text-false .content {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+}
+.building-blocks-carousel-item-text-supporting-text-false .label {
+  color: var(--m3-white, #ffffff);
+  text-align: left;
+  font-family: var(--m3-title-medium-font-family, "Roboto-Medium", sans-serif);
+  font-size: var(--m3-title-medium-font-size, 16px);
+  line-height: var(--m3-title-medium-line-height, 24px);
+  letter-spacing: var(--m3-title-medium-letter-spacing, 0.15px);
+  font-weight: var(--m3-title-medium-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}

@@ -1,0 +1,11 @@
+.chat-bubble,
+.chat-bubble * {
+  box-sizing: border-box;
+}
+.chat-bubble {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
