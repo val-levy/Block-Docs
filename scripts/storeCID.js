@@ -8,24 +8,15 @@ import readline from "readline";
 dotenv.config();
 const FILE_PATH = process.env.FILE_PATH;
 
-// ✅ Function to get user input
-function askQuestion(query) {
-    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-    return new Promise(resolve => rl.question(query, answer => {
-        rl.close();
-        resolve(answer);
-    }));
-}
-
 async function storeFile() {
     const contractAddress = getContractAddress();
     const [signer] = await hardhat.ethers.getSigners();
     const Contract = await hardhat.ethers.getContractAt("CIDStorage", contractAddress, signer);
 
-    // ✅ File info from .env
-    const filePath = FILE_PATH;
-    const fileName = path.basename(filePath);
-    const fileType = path.extname(filePath).substring(1);
+    // File to upload
+    const filePath = FILE_PATH; // Get file path from .env
+    const fileName = path.basename(filePath); // Extract file name
+    const fileType = path.extname(filePath).substring(1); // Extract file extension
 
     console.log(`\n📤 Uploading file: ${fileName} (${fileType})...`);
 
@@ -33,7 +24,7 @@ async function storeFile() {
     const cid = await uploadToIPFS(filePath);
     console.log("✅ IPFS CID:", cid);
 
-    // ✅ Store file on blockchain
+    // Store file with ownership
     const tx = await Contract.storeFile(cid, fileName, fileType);
     await tx.wait();
 

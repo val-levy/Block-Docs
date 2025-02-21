@@ -6,6 +6,7 @@ contract CIDStorage {
         string cid;
         string fileName;
         string fileType;
+        string fileDesc;
         uint256 timestamp;
         address owner;
         mapping(address => bool) sharedWith;
@@ -16,6 +17,7 @@ contract CIDStorage {
         string cid;
         string fileName;
         string fileType;
+        string fileDesc;
         uint256 timestamp;
         address owner;
         uint256 price;
@@ -32,15 +34,11 @@ contract CIDStorage {
     event AccessRevoked(address indexed owner, address indexed user, uint256 fileIndex);
 
     function storeFile(string memory cid, string memory fileName, string memory fileType) public {
-        if (!registeredUsers[msg.sender]) {
-            registeredUsers[msg.sender] = true;
-            allUsers.push(msg.sender);
-        }
-
         File storage newFile = userFiles[msg.sender].push();
         newFile.cid = cid;
         newFile.fileName = fileName;
         newFile.fileType = fileType;
+        newFile.fileDesc = fileDesc;
         newFile.timestamp = block.timestamp;
         newFile.owner = msg.sender;
         newFile.price = 0; // Default: not for sale
@@ -90,6 +88,7 @@ contract CIDStorage {
                 userFiles[user][i].cid,
                 userFiles[user][i].fileName,
                 userFiles[user][i].fileType,
+                userFiles[user][i].fileDesc,
                 userFiles[user][i].timestamp,
                 userFiles[user][i].owner,
                 userFiles[user][i].price
