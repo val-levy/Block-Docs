@@ -18,6 +18,8 @@ async function getUserFiles() {
 
         console.log("\n📄 Stored Files:");
         files.forEach((file, index) => {
+            const pinataLink = `https://gateway.pinata.cloud/ipfs/${file.cid}`;
+
             console.log(`\n🔹 File ${index + 1}:`);
             console.log(`   📂 CID: ${file.cid}`);
             console.log(`   📝 Name: ${file.fileName}`);
