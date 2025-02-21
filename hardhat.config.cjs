@@ -1,4 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
+require('dotenv').config();
+const MNEMONIC = process.env.MNEMONIC;
 
 module.exports =  {
   solidity: "0.8.28",
@@ -6,7 +8,7 @@ module.exports =  {
     ganache: {
       url: "http://127.0.0.1:7545",
       accounts: {
-        mnemonic: "anxiety apart tail giraffe fatal ostrich amount general before garbage zero repair"
+        mnemonic: MNEMONIC
       },
       gas: 6000000,
       gasPrice: 20000000000 // 20 Gwei
