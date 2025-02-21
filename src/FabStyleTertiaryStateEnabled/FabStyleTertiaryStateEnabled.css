@@ -1,0 +1,36 @@
+.fab-style-tertiary-state-enabled,
+.fab-style-tertiary-state-enabled * {
+  box-sizing: border-box;
+}
+.fab-style-tertiary-state-enabled {
+  background: var(--schemes-tertiary-container, #ffd8e4);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: var(
+    --m3-elevation-light-3-box-shadow,
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3),
+    0px 4px 8px 3px rgba(0, 0, 0, 0.15)
+  );
+  overflow: hidden;
+}
+.fab-style-tertiary-state-enabled .state-layer {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* nested override styles */
+
+.fab-style-tertiary-state-enabled .icon-instance {
+  flex-shrink: 0 !important;
+}

@@ -1,0 +1,866 @@
+.examples-home-web,
+.examples-home-web * {
+  box-sizing: border-box;
+}
+.examples-home-web {
+  background: var(--schemes-surface, #fef7ff);
+  border-radius: 18px;
+  border-style: solid;
+  border-color: var(--schemes-outline-variant, #cac4d0);
+  border-width: 8px;
+  padding: 10px;
+  height: 680px;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .content {
+  background: var(--schemes-surface-container-lowest, #ffffff);
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  height: 1104px;
+  position: absolute;
+  right: 16px;
+  left: 72px;
+  top: 92px;
+}
+.examples-home-web .top-app-bar-instance {
+  align-self: stretch !important;
+  height: 164px !important;
+}
+.examples-home-web .home {
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .section-01 {
+  padding: 0px 0px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .title-header {
+  padding: 0px 24px 0px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 48px;
+  position: relative;
+}
+.examples-home-web .title {
+  color: var(--schemes-on-surface, #1d1b20);
+  text-align: left;
+  font-family: var(--m3-title-large-font-family, "Roboto-Regular", sans-serif);
+  font-size: var(--m3-title-large-font-size, 22px);
+  line-height: var(--m3-title-large-line-height, 28px);
+  font-weight: var(--m3-title-large-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.examples-home-web .icon-button-instance {
+  flex-shrink: 0 !important;
+}
+.examples-home-web .carousel {
+  padding: 0px 0px 0px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .item-01 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .avatar {
+  border-radius: var(--corner-full, 1000px);
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .image {
+  border-radius: 1000px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  bottom: 0%;
+  top: 0%;
+  object-fit: cover;
+}
+.examples-home-web .label {
+  color: var(--schemes-on-surface, #1d1b20);
+  text-align: center;
+  font-family: var(--m3-label-large-font-family, "Roboto-Medium", sans-serif);
+  font-size: var(--m3-label-large-font-size, 14px);
+  line-height: var(--m3-label-large-line-height, 20px);
+  letter-spacing: var(--m3-label-large-letter-spacing, 0.1px);
+  font-weight: var(--m3-label-large-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.examples-home-web .item-02 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-03 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-04 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-05 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-06 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-07 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-08 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-9 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-10 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-11 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-12 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item-13 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .section-02 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .frame-2608491 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .carousel-instance {
+  padding: 8px 24px 8px 24px !important;
+  align-self: stretch !important;
+  flex-shrink: 0 !important;
+}
+.examples-home-web .frame-2608490 {
+  padding: 0px 24px 0px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 48px;
+  position: relative;
+}
+.examples-home-web .details {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.examples-home-web .text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.examples-home-web .label2 {
+  color: var(--schemes-on-surface, #1d1b20);
+  text-align: left;
+  font-family: var(--m3-body-large-font-family, "Roboto-Regular", sans-serif);
+  font-size: var(--m3-body-large-font-size, 16px);
+  line-height: var(--m3-body-large-line-height, 24px);
+  letter-spacing: var(--m3-body-large-letter-spacing, 0.5px);
+  font-weight: var(--m3-body-large-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.examples-home-web .supporting-text {
+  color: var(--schemes-on-surface-variant, #49454f);
+  text-align: left;
+  font-family: var(--m3-body-medium-font-family, "Roboto-Regular", sans-serif);
+  font-size: var(--m3-body-medium-font-size, 14px);
+  line-height: var(--m3-body-medium-line-height, 20px);
+  letter-spacing: var(--m3-body-medium-letter-spacing, 0.25px);
+  font-weight: var(--m3-body-medium-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.examples-home-web .details2 {
+  padding: 0px 16px 0px 0px;
+  flex-shrink: 0;
+  width: 120px;
+  height: 44px;
+  position: relative;
+}
+.examples-home-web .details3 {
+  padding: 0px 16px 0px 0px;
+  flex-shrink: 0;
+  width: 56px;
+  height: 48px;
+  position: relative;
+}
+.examples-home-web .section-03 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .header {
+  padding: 0px 24px 0px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 48px;
+  position: relative;
+}
+.examples-home-web .cards {
+  padding: 8px 24px 8px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .card-01 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .item {
+  border-radius: var(--corner-large, 16px);
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .image2 {
+  border-radius: 8px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  bottom: 0%;
+  top: 0%;
+  object-fit: cover;
+}
+.examples-home-web .label3 {
+  color: var(--schemes-on-surface, #1d1b20);
+  text-align: left;
+  font-family: var(--m3-label-large-font-family, "Roboto-Medium", sans-serif);
+  font-size: var(--m3-label-large-font-size, 14px);
+  line-height: var(--m3-label-large-line-height, 20px);
+  letter-spacing: var(--m3-label-large-letter-spacing, 0.1px);
+  font-weight: var(--m3-label-large-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.examples-home-web .card-02 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-03 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-04 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-05 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-06 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-07 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-08 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-09 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-10 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-11 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-12 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .card-13 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .section-04 {
+  padding: 0px 0px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .header2 {
+  padding: 0px 24px 0px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 833px;
+  height: 48px;
+  position: relative;
+}
+.examples-home-web .content2 {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 187px;
+  position: relative;
+}
+.examples-home-web .card-carousel {
+  padding: 0px 0px 16px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.examples-home-web .card-012 {
+  border-radius: var(--corner-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .background-instance {
+  background: var(--schemes-surface-container-high, #ece6f0) !important;
+  border-radius: var(--corner-medium, 12px) !important;
+  position: absolute !important;
+  right: 0px !important;
+  left: 0px !important;
+  bottom: -1px !important;
+  top: 0px !important;
+  height: unset !important;
+}
+.examples-home-web .image3 {
+  border-radius: var(--corner-small, 8px);
+  flex-shrink: 0;
+  width: 116px;
+  height: 119px;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+}
+.examples-home-web .text-content2 {
+  padding: 0px 8px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .title2 {
+  color: var(--schemes-on-surface, #1d1b20);
+  text-align: left;
+  font-family: var(--m3-title-small-font-family, "Roboto-Medium", sans-serif);
+  font-size: var(--m3-title-small-font-size, 14px);
+  line-height: var(--m3-title-small-line-height, 20px);
+  letter-spacing: var(--m3-title-small-letter-spacing, 0.1px);
+  font-weight: var(--m3-title-small-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.examples-home-web .description {
+  color: var(--schemes-on-surface-variant, #49454f);
+  text-align: left;
+  font-family: var(--m3-body-small-font-family, "Roboto-Regular", sans-serif);
+  font-size: var(--m3-body-small-font-size, 12px);
+  line-height: var(--m3-body-small-line-height, 16px);
+  letter-spacing: var(--m3-body-small-letter-spacing, 0.4px);
+  font-weight: var(--m3-body-small-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.examples-home-web .card-022 {
+  border-radius: var(--corner-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .card-032 {
+  border-radius: var(--corner-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .card-042 {
+  border-radius: var(--corner-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .card-052 {
+  border-radius: var(--corner-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .card-062 {
+  border-radius: var(--corner-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .card-7 {
+  border-radius: var(--corner-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .card-8 {
+  border-radius: var(--corner-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .card-9 {
+  border-radius: var(--corner-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .navigation-rail-instance {
+  width: 72px !important;
+  height: 1999px !important;
+  position: absolute !important;
+  left: 0px !important;
+  top: 67px !important;
+  flex-shrink: unset !important;
+}
+.examples-home-web .chrome-browser-bar {
+  background: var(--schemes-surface, #fef7ff);
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  box-shadow: 0px 0.59px 0px 0px rgba(0, 0, 0, 0.15),
+    inset 0px -0.59px 0px 0px rgba(0, 0, 0, 0.05);
+}
+.examples-home-web .icons {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.examples-home-web .back {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.examples-home-web .forward {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.examples-home-web .refresh {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.examples-home-web .address-bar {
+  background: var(--schemes-surface-container, #f3edf7);
+  border-radius: 46.08px;
+  padding: 6px 16px 6px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .url {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.examples-home-web .lock {
+  flex-shrink: 0;
+  width: 15.36px;
+  height: 15.36px;
+  position: relative;
+  overflow: visible;
+}
+.examples-home-web .text {
+  color: var(--schemes-on-surface, #1d1b20);
+  text-align: left;
+  font-family: var(--m3-body-large-font-family, "Roboto-Regular", sans-serif);
+  font-size: var(--m3-body-large-font-size, 16px);
+  line-height: var(--m3-body-large-line-height, 24px);
+  letter-spacing: var(--m3-body-large-letter-spacing, 0.5px);
+  font-weight: var(--m3-body-large-font-weight, 400);
+  position: relative;
+  flex: 1;
+}
+.examples-home-web .star {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow: visible;
+}
+.examples-home-web .avatar2 {
+  background: var(--schemes-outline, #79747e);
+  border-radius: 109.09px;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.examples-home-web .m {
+  color: var(--m3-white, #ffffff);
+  text-align: center;
+  font-family: var(--m3-body-large-font-family, "Roboto-Regular", sans-serif);
+  font-size: var(--m3-body-large-font-size, 16px);
+  line-height: var(--m3-body-large-line-height, 24px);
+  letter-spacing: var(--m3-body-large-letter-spacing, 0.5px);
+  font-weight: var(--m3-body-large-font-weight, 400);
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.examples-home-web .more {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+
+/* nested override styles */
+
+.examples-home-web .icon-instance {
+  flex-shrink: 0 !important;
+}

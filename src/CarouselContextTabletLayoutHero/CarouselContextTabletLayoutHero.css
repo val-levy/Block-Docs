@@ -1,0 +1,85 @@
+.carousel-context-tablet-layout-hero,
+.carousel-context-tablet-layout-hero * {
+  box-sizing: border-box;
+}
+.carousel-context-tablet-layout-hero {
+  padding: 8px 16px 8px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 221px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-context-tablet-layout-hero .item-1 {
+  border-radius: 28px;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-context-tablet-layout-hero .item-text-1-instance {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  right: 0% !important;
+  left: 0% !important;
+  bottom: 0% !important;
+  top: 0% !important;
+  flex-shrink: unset !important;
+}
+.carousel-context-tablet-layout-hero .item-2 {
+  border-radius: 28px;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-context-tablet-layout-hero .item-text-2-instance {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  right: 0% !important;
+  left: 0% !important;
+  bottom: 0% !important;
+  top: 0% !important;
+  flex-shrink: unset !important;
+}
+.carousel-context-tablet-layout-hero .item-3 {
+  border-radius: 28px;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 120px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-context-tablet-layout-hero .item-text-3-instance {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  right: 0% !important;
+  left: 0% !important;
+  bottom: 0% !important;
+  top: 0% !important;
+  flex-shrink: unset !important;
+}
+.carousel-context-tablet-layout-hero .item-last {
+  border-radius: 28px;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-context-tablet-layout-hero .item-text-last-instance {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  right: 0% !important;
+  left: 0% !important;
+  bottom: 0% !important;
+  top: 0% !important;
+  flex-shrink: unset !important;
+}

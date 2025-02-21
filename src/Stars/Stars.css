@@ -1,0 +1,10 @@
+.stars,
+.stars * {
+  box-sizing: border-box;
+}
+.stars {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}

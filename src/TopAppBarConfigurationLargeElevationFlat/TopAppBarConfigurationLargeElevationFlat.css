@@ -1,0 +1,76 @@
+.top-app-bar-configuration-large-elevation-flat,
+.top-app-bar-configuration-large-elevation-flat * {
+  box-sizing: border-box;
+}
+.top-app-bar-configuration-large-elevation-flat {
+  background: var(--schemes-surface, #fef7ff);
+  padding: 0px 0px 28px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.top-app-bar-configuration-large-elevation-flat .leading-trailing-icons {
+  padding: 8px 4px 0px 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.top-app-bar-configuration-large-elevation-flat .leading-icon-instance {
+  flex-shrink: 0 !important;
+}
+.top-app-bar-configuration-large-elevation-flat .trailing-icon {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  position: relative;
+}
+.top-app-bar-configuration-large-elevation-flat .trailing-icon-1-instance {
+  flex-shrink: 0 !important;
+}
+.top-app-bar-configuration-large-elevation-flat .trailing-icon-2-instance {
+  flex-shrink: 0 !important;
+}
+.top-app-bar-configuration-large-elevation-flat .trailing-icon-3-instance {
+  flex-shrink: 0 !important;
+}
+.top-app-bar-configuration-large-elevation-flat .headline {
+  padding: 0px 16px 0px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.top-app-bar-configuration-large-elevation-flat .headline2 {
+  color: var(--schemes-on-surface, #1d1b20);
+  text-align: left;
+  font-family: var(
+    --m3-headline-medium-font-family,
+    "Roboto-Regular",
+    sans-serif
+  );
+  font-size: var(--m3-headline-medium-font-size, 28px);
+  line-height: var(--m3-headline-medium-line-height, 36px);
+  font-weight: var(--m3-headline-medium-font-weight, 400);
+  position: relative;
+}
+
+/* nested override styles */
+
+.top-app-bar-configuration-large-elevation-flat .icon-instance {
+  flex-shrink: 0 !important;
+}

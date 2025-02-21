@@ -1,0 +1,83 @@
+.navigation-rail-alignment-top,
+.navigation-rail-alignment-top * {
+  box-sizing: border-box;
+}
+.navigation-rail-alignment-top {
+  background: var(--schemes-surface, #fef7ff);
+  padding: 44px 0px 56px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 80px;
+  height: 900px;
+  position: relative;
+  overflow: hidden;
+}
+.navigation-rail-alignment-top .menu-fab {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 80px;
+  position: relative;
+}
+.navigation-rail-alignment-top .menu-instance {
+  flex-shrink: 0 !important;
+  transform-origin: 0 0 !important;
+  transform: rotate(0deg) scale(1, 1) !important;
+}
+.navigation-rail-alignment-top .fab-elevation-override {
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.navigation-rail-alignment-top .fab-instance {
+  flex-shrink: 0 !important;
+}
+.navigation-rail-alignment-top .destinations {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 80px;
+  position: relative;
+  overflow: hidden;
+}
+.navigation-rail-alignment-top .nav-item-1-instance {
+  align-self: stretch !important;
+  flex-shrink: 0 !important;
+  width: unset !important;
+}
+.navigation-rail-alignment-top .nav-item-2-instance {
+  align-self: stretch !important;
+  flex-shrink: 0 !important;
+  width: unset !important;
+}
+.navigation-rail-alignment-top .nav-item-3-instance {
+  align-self: stretch !important;
+  flex-shrink: 0 !important;
+  width: unset !important;
+}
+.navigation-rail-alignment-top .nav-item-4-instance {
+  flex-shrink: 0 !important;
+  width: unset !important;
+}
+
+/* nested override styles */
+
+.navigation-rail-alignment-top .icon-instance {
+  flex-shrink: 0 !important;
+}
