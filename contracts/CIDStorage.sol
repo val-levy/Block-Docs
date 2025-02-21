@@ -2,42 +2,78 @@
 pragma solidity ^0.8.28;
 
 contract CIDStorage {
-    address public admin;
-    mapping(address => bool) public approvedUsers;
-    mapping(address => string[]) private userCIDs;
-
-    event CIDStored(address indexed user, string cid);
-    event UserApproved(address indexed user);
-    event UserRevoked(address indexed user);
-
-    constructor() {
-        admin = msg.sender; // Set deployer as admin
+    struct File {
+        string cid;
+        string fileName;
+        string fileType;
+        uint256 timestamp;
+        address owner;
+        mapping(address => bool) sharedWith;
+        uint256 price;  // Price in MATIC (0 = not for sale)
     }
 
-    // 🔹 Only admin can approve new users
-    function approveUser(address _user) public {
-        require(msg.sender == admin, "Only admin can approve users");
-        approvedUsers[_user] = true;
-        emit UserApproved(_user);
+    struct FileView {
+        string cid;
+        string fileName;
+        string fileType;
+        uint256 timestamp;
+        address owner;
+        uint256 price;
     }
 
-    // 🔹 Only admin can revoke user access
-    function revokeUser(address _user) public {
-        require(msg.sender == admin, "Only admin can revoke users");
-        approvedUsers[_user] = false;
-        emit UserRevoked(_user);
+    mapping(address => File[]) private userFiles;
+
+    event FileUploaded(address indexed owner, string cid, string fileName);
+    event FilePurchased(address indexed buyer, address indexed seller, string cid, uint256 price);
+    event PriceUpdated(address indexed owner, string cid, uint256 newPrice);
+
+    function storeFile(string memory cid, string memory fileName, string memory fileType) public {
+        File storage newFile = userFiles[msg.sender].push();
+        newFile.cid = cid;
+        newFile.fileName = fileName;
+        newFile.fileType = fileType;
+        newFile.timestamp = block.timestamp;
+        newFile.owner = msg.sender;
+        newFile.price = 0; // Default: not for sale
+
+        emit FileUploaded(msg.sender, cid, fileName);
     }
 
-    // 🔹 Only approved users can store a CID
-    function storeCID(string memory _cid) public {
-        require(approvedUsers[msg.sender], "You are not authorized to store CIDs");
-        userCIDs[msg.sender].push(_cid);
-        emit CIDStored(msg.sender, _cid);
+    function setPrice(uint256 fileIndex, uint256 price) public {
+        require(fileIndex < userFiles[msg.sender].length, "Invalid file index");
+        require(userFiles[msg.sender].length > 0, "No files found for this user");
+        userFiles[msg.sender][fileIndex].price = price;
+        emit PriceUpdated(msg.sender, userFiles[msg.sender][fileIndex].cid, price);
+    
     }
 
-    // 🔹 Only the owner of the CIDs can retrieve them
-    function getUserCIDs() public view returns (string[] memory) {
-        require(approvedUsers[msg.sender], "You are not authorized to retrieve CIDs");
-        return userCIDs[msg.sender];
+
+    function buyFile(address seller, uint256 fileIndex) public payable {
+        require(fileIndex < userFiles[seller].length, "Invalid file index");
+        File storage file = userFiles[seller][fileIndex];
+        require(msg.value >= file.price, "Insufficient payment");
+        require(file.price > 0, "File is not for sale");
+
+        file.sharedWith[msg.sender] = true; // Grant access
+        payable(seller).transfer(msg.value); // Send payment to the seller
+
+        emit FilePurchased(msg.sender, seller, file.cid, file.price);
+    }
+
+    function getUserFiles(address user) public view returns (FileView[] memory) {
+        uint256 fileCount = userFiles[user].length;
+        FileView[] memory fileList = new FileView[](fileCount);
+
+        for (uint256 i = 0; i < fileCount; i++) {
+            fileList[i] = FileView(
+                userFiles[user][i].cid,
+                userFiles[user][i].fileName,
+                userFiles[user][i].fileType,
+                userFiles[user][i].timestamp,
+                userFiles[user][i].owner,
+                userFiles[user][i].price
+            );
+        }
+        return fileList;
     }
 }

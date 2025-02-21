@@ -1,29 +1,34 @@
 import hardhat from "hardhat";
+import { getContractAddress } from "../config.js";
 
-const { ethers } = hardhat;
+async function getUserFiles() {
+    const contractAddress = getContractAddress();
+    const [signer] = await hardhat.ethers.getSigners();
+    const Contract = await hardhat.ethers.getContractAt("CIDStorage", contractAddress, signer);
 
-async function getUserCIDs() {
-    const contractAddress = "getContractAddress()"; // Replace with actual deployed contract address
-    // Get wallet signer
-    const [signer] = await ethers.getSigners();
-    console.log("Fetching stored CIDs for user:", signer.address);
+    console.log("Fetching stored files for:", signer.address);
 
-    // Retrieve contract and ensure it's connected to the signer
-    const Contract = await ethers.getContractAt("CIDStorage", contractAddress, signer);
+    try {
+        const files = await Contract.getUserFiles(signer.address);
 
-    // Call smart contract function to get stored CIDs
-    const cids = await Contract.getUserCIDs();
+        if (files.length === 0) {
+            console.log("❌ No files stored on-chain.");
+            return;
+        }
 
-    if (cids.length === 0) {
-        console.log("No files stored on blockchain for this user.");
-        return;
+        console.log("\n📄 Stored Files:");
+        files.forEach((file, index) => {
+            console.log(`\n🔹 File ${index + 1}:`);
+            console.log(`   📂 CID: ${file.cid}`);
+            console.log(`   📝 Name: ${file.fileName}`);
+            console.log(`   📎 Type: ${file.fileType}`);
+            console.log(`   ⏳ Uploaded At: ${new Date(Number(file.timestamp) * 1000).toLocaleString()}`);
+            console.log(`   👤 Owner: ${file.owner}`);
+        });
+    } catch (error) {
+        console.error("❌ Error retrieving files:", error);
     }
-
-    console.log("\n🔹 User's stored files:");
-    cids.forEach(cid => {
-        console.log(`🔗 File URL: https://gateway.pinata.cloud/ipfs/${cid}`);
-    });
 }
 
-// Run the function
-getUserCIDs().catch(console.error);
+// Run function
+getUserFiles().catch(console.error);
