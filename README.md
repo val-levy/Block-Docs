@@ -47,3 +47,12 @@ npx hardhat run scripts/getUserCIDs.js --network ganache
 
 # 14. Copy the output link and open it in your browser.
 
+# 15. Grant file access to another wallet
+npx hardhat run scripts/grantAccess.js --network ganache
+- Enter the ETH address you wish to share a file with.
+
+#16. Revoking file access to another wallet.
+npx hardhat run scripts/revokeAccess.js --network ganache
+-
+
+#17. 
