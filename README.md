@@ -1,4 +1,3 @@
-![BlockDocs Preview](https://raw.githubusercontent.com/val-levy/Block-Docs/main/preview.png)
 # BlockDocs -- Blockchain File Exchange
 
 A program designed to hash and upload secure documents to the blockchain that can be exchanged for cryptocurrency
